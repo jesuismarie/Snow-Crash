@@ -50,4 +50,4 @@
 	/bin/getflag
 	```
 
-	You’ll receive the `flag02` token.
+	You’ll receive the `flag03` token.
