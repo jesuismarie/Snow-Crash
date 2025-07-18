@@ -85,4 +85,3 @@
 	```
 
 	You’ve successfully executed `getflag` with `flag05`’s privileges.
-
