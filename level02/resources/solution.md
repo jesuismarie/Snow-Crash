@@ -61,7 +61,7 @@
 
 	This extracts raw hexadecimal payload data from the capture file.
 
-4. Convert text to C Array:
+4. **Convert text to C Array:**
 
 	```ini
 	char peer0_13[] = { /* Packet 45 */ 0x66 }; /* f */

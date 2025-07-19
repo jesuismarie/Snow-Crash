@@ -14,7 +14,7 @@
 
 	This script is **owned by `flag04`** and **has the SUID bit set**, meaning it executes with `flag04`'s privileges when run — even from a web request.
 
-2. **Analyze the script source code**
+2. **Analyze the script source code.**
 
 	View the script:
 
@@ -42,7 +42,7 @@
 	* Passes the user input **directly into backticks**, which runs it as a shell command.
 	* This results in a classic **command injection vulnerability**.
 
-3. **Exploit the vulnerable CGI parameter**
+3. **Exploit the vulnerable CGI parameter.**
 
 	You can interact with the web service locally using `curl`:
 

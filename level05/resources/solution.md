@@ -51,7 +51,7 @@
 	* Then it deletes it
 	* It runs as `flag05`, so anything executed will inherit `flag05`'s privileges
 
-4. **Exploit: Inject a script to get the flag**
+4. **Exploit: Inject a script to get the flag.**
 
 	Create a shell script in `/opt/openarenaserver/`:
 

@@ -1,6 +1,6 @@
 ### Solution
 
-1. **List files and check permissions**
+1. **List files and check permissions:**
 
 	```bash
 	ls -l
@@ -22,7 +22,7 @@
 	scp -P 4242 level07@<vm-ip>:~/level07 .
 	```
 
-3. **Analyze the binary with Ghidra**
+3. **Analyze the binary with Ghidra.**
 
 	Examining the binary reveals the following, it reads the `LOGNAME` environment variable:
 
@@ -34,7 +34,7 @@
 
 	This means: the program **constructs and executes a shell command** using whatever is inside `LOGNAME`, without sanitizing it.
 
-4. **Exploit the insecure environment usage**
+4. **Exploit the insecure environment usage.**
 
 	You can inject a command using **backticks or `$()`** into the `LOGNAME` environment variable.
 

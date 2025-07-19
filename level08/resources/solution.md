@@ -2,7 +2,7 @@ Here's a `README` for **level08**, written in the same style and format as your 
 
 ### Solution
 
-1. **List files and check permissions**
+1. **List files and check permissions:**
 
 	```bash
 	ls -l
@@ -18,7 +18,7 @@ Here's a `README` for **level08**, written in the same style and format as your 
 	* The binary `level08` is **owned by `flag08`** and has the **SUID bit** set, meaning it executes with `flag08`'s privileges.
 	* `token` is a file readable **only** by `flag08`.
 
-2. **Transfer the executable file to your host machine**
+2. **Transfer the executable file to your host machine.**
 
 	From your host, use `scp` to copy the binary for analysis:
 
@@ -26,7 +26,7 @@ Here's a `README` for **level08**, written in the same style and format as your 
 	scp -P 4242 level08@<vm-ip>:~/level08 .
 	```
 
-3. **Analyze the binary with Ghidra**
+3. **Analyze the binary with Ghidra.**
 
 	Decompiling with Ghidra shows the following logic:
 
@@ -51,7 +51,7 @@ Here's a `README` for **level08**, written in the same style and format as your 
 	* Prevents access to files **containing** the string `"token"`.
 	* But it does **not resolve symlinks** — only checks the input path **string**.
 
-4. **Bypass the check using a symlink**
+4. **Bypass the check using a symlink.**
 
 	Create a symlink to the `token` file using a different name (e.g. `/tmp/flag08`):
 

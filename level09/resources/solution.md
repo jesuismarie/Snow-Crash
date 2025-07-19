@@ -1,6 +1,6 @@
 ### Solution
 
-1. **List files and check permissions**
+1. **List files and check permissions:**
 
 	```bash
 	ls -l
@@ -16,7 +16,7 @@
 	* `level09` is a **SUID binary** owned by `flag09`.
 	* The `token` file is **not readable** by `level09` user (only by `flag09`), but **executable binary can read it** due to SUID bit.
 
-2. **Run the binary**
+2. **Run the binary.**
 
 	Run without arguments:
 
@@ -44,7 +44,7 @@
 
 	The result appears to be an incomplete or incorrect output. Let’s investigate.
 
-3. **Transfer the token file to host for analysis**
+3. **Transfer the token file to host for analysis:**
 
 	On your host:
 
@@ -68,7 +68,7 @@
 
 	The last byte `0a` is a **newline character**, not part of the actual encrypted data. It can be safely ignored for decryption.
 
-4. **Write a Python script to decrypt the token**
+4. **Write a Python script to decrypt the token.**
 
 	From Ghidra analysis of `level09`, we find that the binary performs **byte-wise decryption**, where:
 
@@ -101,7 +101,7 @@
 
 	That is the **decrypted token**.
 
-5. **Use the token to switch user**
+5. **Use the token to switch user.**
 
 	Back in the VM:
 

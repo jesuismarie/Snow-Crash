@@ -1,6 +1,6 @@
 ### Solution
 
-1. **List files and check permissions**
+1. **List files and check permissions:**
 
 	```bash
 	ls -l
