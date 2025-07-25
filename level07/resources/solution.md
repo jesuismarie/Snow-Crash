@@ -41,19 +41,13 @@
 	Run this:
 
 	```bash
-	LOGNAME='`getflag`' ./level07
+	LOGNAME='`getflag`'
 	```
 
-	The program will execute:
+	Then we run the program:
 
 	```bash
-	/bin/echo `getflag`
-	```
-
-	Which gets expanded to:
-
-	```
-	/bin/echo Check flag.Here is your token : fiumuikeil55xe9cu4dood66h
+	./level07
 	```
 
 	Output:
