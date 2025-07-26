@@ -78,7 +78,7 @@ Here's a `README` for **level08**, written in the same style and format as your 
 5. **Switch to user `flag08` and get the flag:**
 
 	```bash
-	su flag00
+	su flag08
 	```
 
 	Enter the token password: `quif5eloekouj29ke0vouxean`.
